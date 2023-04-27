@@ -1,0 +1,23 @@
+[project]
+name = "tryout-djangox"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [
+    { name = "Ben Hughes", email = "ben@hghs.me" }
+]
+dependencies = ["django~=4.2", "django-allauth~=0.54.0", "django-crispy-forms~=2.0", "django-debug-toolbar~=4.0.0", "psycopg~=3.1.8", "psycopg-binary~=3.1.8", "whitenoise~=6.4.0", "crispy-bootstrap5~=0.7"]
+readme = "README.md"
+requires-python = ">= 3.8"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+
+[tool.rye.scripts]
+serve = "python manage.py runserver"
+migrate = "python manage.py makemigrations && python manage.py migrate"
+test = "python manage.py test"
